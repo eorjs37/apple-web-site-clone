@@ -83,6 +83,16 @@ a {
   line-height: 1.2;
 }
 
+.main-message small {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+}
+
+#scroll-section-2 .main-message {
+  font-size: 3.5rem;
+}
+
 .description {
   padding: 0 1rem;
   font-size: 1.2;
@@ -94,4 +104,86 @@ a {
   margin-right: 0.2em;
   font-size: 3rem;
   color: rgb(29, 29, 31);
+}
+
+.desc-message {
+  font-size: bold;
+  width: 50%;
+}
+
+.pin {
+  width: 1px;
+  height: 100px;
+  background-color: #000;
+}
+
+.mid-message {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-size: 2rem;
+  color: #888;
+}
+
+.mid-message strong {
+  color: rgb(29, 29, 31);
+}
+
+.canvas-caption {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: #888;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  color: #fff;
+  background-color: darkorange;
+}
+
+@media (min-width: 1024px) {
+  #scroll-section-0 h1 {
+    font-size: 9vw;
+  }
+
+  .main-message {
+    font-size: 4vw;
+  }
+
+  .description {
+    max-width: 1000px;
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+
+  .description strong {
+    font-size: 6rem;
+  }
+
+  #scroll-section-2 .main-message {
+    font-size: 6vw;
+  }
+
+  .main-message small {
+    font-size: 1.5vw;
+  }
+
+  .desc-message {
+    font-size: bold;
+    width: 20%;
+  }
+
+  .mid-message {
+    font-size: 4vw;
+  }
+
+  .canvas-caption {
+    font-size: 2rem;
+  }
 }
