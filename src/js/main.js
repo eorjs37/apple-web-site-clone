@@ -51,10 +51,19 @@
 
   function scrollLoop() {
     prevScrollHeight = 0;
+    //앞의 높이 구하기
+    /**
+     * 1. currentScene이 0인경우 prevScrollHeight = 0
+     *
+     * */
     for (let i = 0; i < currentScene; i++) {
       prevScrollHeight += sceneInfo[i].scrollHeight;
     }
 
+    /**
+     * 2. yOffset(현재 브라우저에서 스크롤을 내린 위치) > prevScrollHeight(현재 스크롤 높이) +
+     *
+     * */
     if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
       currentScene++;
     }
