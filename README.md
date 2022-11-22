@@ -41,3 +41,23 @@ p {
 ## 즉시 실행함수
 
 > 함수를 한번만 실행하기 위해서는 즉시 실행 함수를 사용한다.
+
+## sceneInfo
+
+```javascript
+const sceneInfo = [
+  {
+    type: "sticky", //타입 종류
+    scrollHeight: 0, //초기 scene 높이
+    heightNum: 5, // 현재 보이는 브라우저 높이 * 5
+  },
+];
+```
+
+## func setLayout
+
+> 각 scene 높이 세팅
+
+## func scrollLoop
+
+> 스크롤 이벤트 발생시 body에 id세팅

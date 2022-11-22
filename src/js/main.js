@@ -57,6 +57,7 @@
 
     let totalScrollHeight = 0;
     yOffset = window.pageYOffset;
+    //현재 scene 계산
     for (let i = 0; i < sceneInfo.length; i++) {
       totalScrollHeight += sceneInfo[i].scrollHeight;
       if (totalScrollHeight >= yOffset) {
@@ -72,7 +73,6 @@
     const values = sceneInfo[currentScene].values;
     const objs = sceneInfo[currentScene].objs;
     const currentYOffset = yOffset - prevScrollHeight;
-    console.log(currentScene, currentYOffset);
     switch (currentScene) {
       case 0:
         let messageA_opacity_0 = values.messageA_opacity[0];
@@ -105,7 +105,6 @@
     for (let i = 0; i < currentScene; i++) {
       prevScrollHeight += sceneInfo[i].scrollHeight;
     }
-
     if (yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
       currentScene++;
       document.body.setAttribute("id", `show-scene-${currentScene}`);
