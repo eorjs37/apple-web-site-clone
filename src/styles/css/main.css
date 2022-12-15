@@ -81,6 +81,7 @@ a {
   align-items: center;
   justify-content: center;
   height: 3em;
+  top: 35vh;
   font-size: 2.5rem;
   margin: 5px 0;
   opacity: 0;
@@ -159,7 +160,7 @@ a {
 .sticy-elem {
   display: none;
   position: fixed;
-  top: 0;
+  /* top: 0; */
   left: 0;
   width: 100%;
 }
