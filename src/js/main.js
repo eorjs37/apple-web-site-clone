@@ -90,7 +90,6 @@
         if (scrollRatio <= 0.22) {
           //in
           objs.messageA.style.opacity = messageA_opacity_in;
-          console.log("messageA_translateY_in : ", messageA_translateY_in);
           objs.messageA.style.transform = `translateY(${messageA_translateY_in}%)`;
         } else {
           //out
