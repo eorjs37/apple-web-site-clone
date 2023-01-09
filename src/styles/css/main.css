@@ -28,10 +28,12 @@ a {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .local-nav {
   height: 52px;
+  z-index: 11;
   padding: 0 1rem;
   border-bottom: 1px solid #ddd;
   position: absolute;
@@ -180,6 +182,17 @@ a {
 #show-scene-2 #scroll-section-2 .sticy-elem,
 #show-scene-3 #scroll-section-3 .sticy-elem {
   display: block;
+}
+
+.sticy-elem-canvas {
+  top: 0;
+  height: 100%;
+}
+
+.sticy-elem-canvas canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 @media (min-width: 1024px) {

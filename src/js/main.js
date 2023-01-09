@@ -15,8 +15,13 @@
         messageB: document.querySelector("#scroll-section-0 .main-message.b"),
         messageC: document.querySelector("#scroll-section-0 .main-message.c"),
         messageD: document.querySelector("#scroll-section-0 .main-message.d"),
+        canvas: document.querySelector("#video-canvas-0"),
+        context: document.querySelector("#video-canvas-0").getContext("2d"),
+        videoImages: [],
       },
       values: {
+        videoImageCount: 300,
+        imageSequence: [0, 299],
         messageA_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
         messageB_opacity_in: [0, 1, { start: 0.3, end: 0.4 }],
         messageC_opacity_in: [0, 1, { start: 0.5, end: 0.6 }],
@@ -90,6 +95,16 @@
     },
   ];
 
+  function setCanvasImages() {
+    let imgElem;
+    for (let i = 0; i < sceneInfo[0].values.videoImageCount; i++) {
+      imgElem = new Image();
+      imgElem.src = `./src/videos/001/IMG_${6726 + i}.JPG`;
+      sceneInfo[0].objs.videoImages.push(imgElem);
+    }
+  }
+  setCanvasImages();
+
   function setLayout() {
     //각 스크롤 섹션의 높이 세팅
     for (let sceneIndex = 0; sceneIndex < sceneInfo.length; sceneIndex++) {
@@ -114,6 +129,9 @@
     }
 
     document.body.setAttribute("id", `show-scene-${currentScene}`);
+    const heightRatio = window.innerHeight / 1080;
+    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0px) scale(${heightRatio})`;
+    sceneInfo[0].objs.c;
   }
 
   function playAnimation() {
@@ -125,6 +143,9 @@
 
     switch (currentScene) {
       case 0:
+        let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
+        objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+
         if (scrollRatio <= 0.22) {
           //in
           objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);
@@ -226,7 +247,7 @@
       // partScrollHeight : 847px - 423.5px
       if (currentYOffset >= partScrollStart && currentYOffset <= partScrollEnd) {
         //currentYOffset - 423.5px / (847px - 423.5px)
-        console.log("rv before : ", (currentYOffset - partScrollStart) / partScrollHeight);
+
         rv = ((currentYOffset - partScrollStart) / partScrollHeight) * (values[1] - values[0]) + values[0];
       } else if (currentYOffset < partScrollStart) {
         rv = values[0];
